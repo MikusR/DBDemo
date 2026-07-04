@@ -14,13 +14,13 @@ SELECT students.name, courses.course_name
 FROM students
          JOIN courses ON students.course_id = courses.course_id;
 
-SELECT students.course_id,
-       course_name,
-       COUNT(*)
-FROM students
-         INNER JOIN courses ON
-    students.course_id = courses.course_id
-GROUP BY students.course_id;
+SELECT courses.course_id,
+       courses.course_name,
+       COUNT(students.id) AS student_count
+FROM courses
+         LEFT JOIN students ON
+    courses.course_id = students.course_id
+GROUP BY courses.course_id, courses.course_name;
 
 UPDATE students
 SET age = 87
