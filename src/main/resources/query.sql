@@ -12,7 +12,7 @@ WHERE age > 20;
 
 SELECT students.name, courses.course_name
 FROM students
-         JOIN courses ON students.course_id = courses.course_id
+         JOIN courses ON students.course_id = courses.course_id;
 
 SELECT students.course_id,
        course_name,
